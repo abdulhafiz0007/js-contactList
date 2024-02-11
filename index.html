@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+
+    <header class="site-header p-4">
+        <h1 class="text-center text-[40px] font-semi-bold">Contact Book</h1>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <div class="flex itmes-start justify-center gap-[40px]">
+                    <form class="js-contact-form w-[600px] inline-flex flex-col gap-2">
+                        <input class="form-control js-contact-input" type="text" placeholder="Enter your name" name="user_name"
+                         aria-label="enter your name here" required>
+
+                         <input class="form-control js-contact-relationship-list" type="text" list="relationships" placeholder="Choose your status"
+                         aria-label="enter your status here" required>
+                         <datalist id="relationships" aria-label="choose relationship">
+                            <option value="" hidden></option>
+                            <option value="family"></option>
+                            <option value="friend"></option>
+                            <option value="classmates"></option>
+                            <option value="relatives"></option>
+                         </datalist>
+
+                         <input class="form-control js-contact-number" type="tel" placeholder="Enter your number" name="user_name"
+                         aria-label="enter your name here" pattern="[+]\d{12}" required>
+                         <span class="text-red-600 invalid-message">
+                            This number is already exist!
+                         </span>
+
+                         <button class="text-white bg-green-700 p-2 rounded w-[180px] ml-auto">Add new contact</button>
+                    
+                    </form>
+                    <ul class="js-contact-list">
+                      
+                    </ul>
+
+                    <template class="js-contact-template">
+                        <li class="w-[600px] border-2 rounded p-3">
+                            <h3 class="user-name text-4xl text-stone-600 pb-2 border-b-2 mb-3"></h3>
+                            <span class="user-name-status text-[17px] text-stone-500"></span>
+                            <div class="flex justify-between items-center mt-3">
+                                <a href="#" class="user-phone-number text-white bg-black p-2 rounded"></a>
+                                <button class="js-delete-button text-white bg-red-600 p-2 rounded">Delete Contact</button>
+                            </div>
+                        </li>
+                    </template>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="./script.js"></script>
+
+
+</body>
+</html>
